@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MR SHADY SAAD Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://unpkg.com/html5-qrcode"></script>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233b;--line:#283550;--text:#edf3ff;--muted:#9aabc8;--accent:#60a5fa;--accent2:#34d399;--danger:#fb7185;--gold:#fbbf24}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#172746 0,#0b1020 48%);color:var(--text);font-family:'Cairo',sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--accent);color:#061226;font-weight:800}button.secondary{background:#273653;color:var(--text)}button.green{background:var(--accent2)}button.red{background:var(--danger);color:#260710}.hidden{display:none!important}.wrap{max-width:1400px;margin:auto;padding:20px}.top{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#60a5fa,#34d399);display:grid;place-items:center;color:#071225;font-weight:900;font-size:20px}.brand h1{font-size:20px;margin:0}.brand p{color:var(--muted);margin:2px 0 0;font-size:12px}.pill{background:#1d2c47;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:12px}.auth{max-width:440px;margin:8vh auto;background:#121a2d;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 25px 70px #0005}.auth h2{margin-top:0}.field{display:flex;flex-direction:column;gap:5px;margin:10px 0}.field label{color:var(--muted);font-size:12px}.field input,.field select,.field textarea,.search{background:#0b1325;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:11px;min-width:0;width:100%}.field textarea{min-height:75px}.auth-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.msg{color:var(--gold);font-size:13px;min-height:20px}.layout{display:grid;grid-template-columns:220px 1fr;gap:18px}.side,.panel,.stat{background:#121a2deF;border:1px solid var(--line);border-radius:17px}.side{padding:12px;height:max-content;position:sticky;top:12px}.nav{width:100%;text-align:right;background:transparent;color:var(--muted);margin:3px 0;font-weight:700}.nav.active,.nav:hover{background:#203251;color:var(--text)}.content{min-width:0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.stat{padding:15px}.stat .label{color:var(--muted);font-size:12px}.stat .value{font-size:25px;font-weight:800;margin-top:4px}.stat small{color:var(--muted)}.panel{padding:18px;margin-bottom:16px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}.panel h2,.panel h3{margin:0}.muted{color:var(--muted)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.formgrid .field{margin:0}.actions{display:flex;gap:6px;flex-wrap:wrap}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:right;padding:10px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle}th{color:var(--muted);font-weight:700;background:#111a2c}.tag{padding:4px 8px;border-radius:999px;background:#213451;font-size:11px}.tag.red{background:#4a2334;color:#ffb9c6}.tag.green{background:#153e39;color:#a7f3d0}.empty{text-align:center;padding:24px;color:var(--muted)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.toolbar .search{max-width:300px}.notice{border:1px solid #6b5120;background:#332a16;color:#ffe5a3;border-radius:12px;padding:12px;font-size:12px;margin-bottom:14px}.student-card{border:1px solid var(--line);border-radius:14px;padding:12px;background:#0e172a}.qrbox{background:white;border-radius:10px;padding:10px;display:inline-block}.small{font-size:12px}.tabs{display:flex;gap:6px;flex-wrap:wrap}.foot{color:var(--muted);text-align:center;font-size:11px;padding:18px}.status{font-size:12px;color:var(--accent2)}@media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:4px}.nav{white-space:nowrap;width:auto}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.wrap{padding:12px}.stats{gap:8px}.stat{padding:11px}.stat .value{font-size:20px}.grid2,.formgrid{grid-template-columns:1fr}.panel{padding:13px}.brand h1{font-size:16px}}
+</style>
+</head>
+<body>
+<div id="authView" class="auth">
+  <div class="brand"><div class="logo">SS</div><div><h1>MR SHADY SAAD Pro</h1><p>نظام إدارة المدرس والطلاب</p></div></div>
+  <div class="notice" style="margin-top:18px">أدخل بيانات مشروع Supabase الجديد في إعدادات الربط داخل الملف قبل النشر. لا تضع أي مفتاح سري هنا.</div>
+  <h2 id="authTitle">تسجيل الدخول</h2>
+  <div class="field"><label>البريد الإلكتروني</label><input id="authEmail" type="email" autocomplete="email" placeholder="name@example.com"></div>
+  <div class="field"><label>كلمة المرور</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="كلمة المرور"></div>
+  <div class="field hidden" id="nameField"><label>اسم المدرس</label><input id="authName" placeholder="MR SHADY SAAD"></div>
+  <div class="auth-actions"><button id="authSubmit" onclick="authSubmit()">دخول</button><button class="secondary" id="toggleAuth" onclick="toggleAuthMode()">إنشاء حساب جديد</button></div>
+  <p id="authMsg" class="msg"></p>
+</div>
+
+<div id="appView" class="wrap hidden">
+  <header class="top"><div class="brand"><div class="logo">SS</div><div><h1>MR SHADY SAAD Pro</h1><p>لوحة إدارة المدرس الذكية</p></div></div><div class="toolbar"><span id="whoami" class="pill">متصل</span><button class="secondary" onclick="refreshAll()">تحديث البيانات</button><button class="red" onclick="signOut()">خروج</button></div></header>
+  <div class="notice">البيانات محفوظة على Supabase وتظهر على الأجهزة الأخرى عند تسجيل الدخول بنفس الحساب. استخدم اتصالًا آمنًا (HTTPS) لتشغيل كاميرا الهاتف.</div>
+  <div class="layout">
+    <aside class="side" id="nav">
+      <button class="nav active" data-page="dashboard" onclick="showPage('dashboard')">◈ الرئيسية</button>
+      <button class="nav" data-page="students" onclick="showPage('students')">♙ الطلاب و QR</button>
+      <button class="nav" data-page="groups" onclick="showPage('groups')">▦ المجموعات</button>
+      <button class="nav" data-page="attendance" onclick="showPage('attendance')">✓ الحضور والغياب</button>
+      <button class="nav" data-page="payments" onclick="showPage('payments')">جنيه المدفوعات والديون</button>
+      <button class="nav" data-page="materials" onclick="showPage('materials')">▤ المذكرات والمخزون</button>
+      <button class="nav" data-page="cash" onclick="showPage('cash')">⇄ الإيرادات والمصروفات</button>
+      <button class="nav" data-page="exams" onclick="showPage('exams')">✎ الامتحانات</button>
+      <button class="nav" data-page="scanner" onclick="showPage('scanner')">▣ سكان QR</button>
+      <button class="nav" data-page="settings" onclick="showPage('settings')">⚙ الإعدادات</button>
+    </aside>
+    <main class="content">
+      <section id="page-dashboard">
+        <div class="stats">
+          <div class="stat"><div class="label">إجمالي الطلاب النشطين</div><div id="statStudents" class="value">—</div><small>كل المجموعات</small></div>
+          <div class="stat"><div class="label">غياب اليوم</div><div id="statAbsent" class="value">—</div><small>حسب تسجيل الحضور</small></div>
+          <div class="stat"><div class="label">المبالغ المحصلة</div><div id="statPaid" class="value">—</div><small>إجمالي سجل المدفوعات</small></div>
+          <div class="stat"><div class="label">صافي حركة الخزنة</div><div id="statNet" class="value">—</div><small>إيرادات ناقص مصروفات</small></div>
+        </div>
+        <div class="grid2"><div class="panel"><div class="panel-head"><h3>تنبيهات سريعة</h3></div><div id="alerts" class="muted">جارٍ تحميل البيانات...</div></div>
+        <div class="panel"><div class="panel-head"><h3>اختصارات</h3></div><div class="actions"><button onclick="showPage('students')">إضافة طالب</button><button onclick="showPage('attendance')">تسجيل حضور</button><button onclick="showPage('payments')">تسجيل دفعة</button><button onclick="showPage('exams')">إنشاء امتحان</button></div></div></div>
+        <div class="panel"><div class="panel-head"><h3>ملخص المجموعات</h3></div><div id="groupSummary" class="tablewrap"></div></div>
+      </section>
+
+      <section id="page-students" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>إضافة طالب جديد</h2><span class="muted small">يتولد كود الطالب تلقائيًا إذا تركته فارغًا</span></div>
+          <form id="studentForm" class="formgrid">
+            <div class="field"><label>اسم الطالب *</label><input name="full_name" required></div>
+            <div class="field"><label>كود الطالب</label><input name="student_code" placeholder="تلقائي"></div>
+            <div class="field"><label>المجموعة</label><select name="group_id" id="studentGroup"><option value="">بدون مجموعة</option></select></div>
+            <div class="field"><label>رقم الطالب</label><input name="phone" inputmode="tel"></div>
+            <div class="field"><label>اسم ولي الأمر</label><input name="guardian_name"></div>
+            <div class="field"><label>رقم ولي الأمر</label><input name="guardian_phone" inputmode="tel"></div>
+            <div class="field"><label>الصف الدراسي</label><input name="grade_level"></div>
+            <div class="field"><label>ملاحظات</label><input name="notes"></div>
+            <div class="field" style="justify-content:end"><button type="submit">حفظ الطالب</button></div>
+          </form><p id="studentMsg" class="msg"></p>
+        </div>
+        <div class="panel"><div class="panel-head"><h2>قائمة الطلاب</h2><div class="toolbar"><input id="studentSearch" class="search" placeholder="ابحث بالاسم أو الكود أو الهاتف" oninput="renderStudents()"><button class="secondary" onclick="exportStudents()">تصدير CSV</button></div></div><div id="studentsTable" class="tablewrap"></div></div>
+        <div id="studentDetail" class="panel hidden"></div>
+      </section>
+
+      <section id="page-groups" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>إضافة مجموعة</h2></div><form id="groupForm" class="formgrid">
+          <div class="field"><label>اسم المجموعة *</label><input name="name" required></div><div class="field"><label>المادة</label><input name="subject"></div><div class="field"><label>المواعيد</label><input name="schedule" placeholder="مثال: الأحد والثلاثاء 5 م"></div><div class="field"><label>سعر الشهر</label><input name="monthly_fee" type="number" min="0" step=".01" value="0"></div><div class="field"><label>ملاحظات</label><input name="notes"></div><div class="field" style="justify-content:end"><button>حفظ المجموعة</button></div>
+        </form><p id="groupMsg" class="msg"></p></div><div class="panel"><div class="panel-head"><h2>المجموعات وعدد الطلاب</h2></div><div id="groupsTable" class="tablewrap"></div></div>
+      </section>
+
+      <section id="page-attendance" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>تسجيل الحضور والغياب</h2><button class="secondary" onclick="showPage('scanner')">افتح سكان QR</button></div>
+          <form id="attendanceForm" class="formgrid"><div class="field"><label>الطالب *</label><select name="student_id" id="attendanceStudent" required></select></div><div class="field"><label>التاريخ</label><input name="session_date" type="date" id="attendanceDate" required></div><div class="field"><label>الحالة</label><select name="status"><option value="present">حاضر</option><option value="absent">غائب</option><option value="late">متأخر</option><option value="excused">غياب بعذر</option></select></div><div class="field"><label>المجموعة</label><select name="group_id" id="attendanceGroup"><option value="">حسب مجموعة الطالب</option></select></div><div class="field"><label>ملاحظات</label><input name="notes"></div><div class="field" style="justify-content:end"><button>تسجيل</button></div></form><p id="attendanceMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>سجل الحضور</h2><div class="toolbar"><input id="attendanceFilterDate" type="date" class="search" onchange="renderAttendance()"><button class="secondary" onclick="document.getElementById('attendanceFilterDate').value='';renderAttendance()">عرض الكل</button></div></div><div id="attendanceTable" class="tablewrap"></div></div>
+      </section>
+
+      <section id="page-payments" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>تسجيل دفعة</h2></div><form id="paymentForm" class="formgrid"><div class="field"><label>الطالب *</label><select name="student_id" id="paymentStudent" required></select></div><div class="field"><label>المبلغ *</label><input name="amount" type="number" min=".01" step=".01" required></div><div class="field"><label>نوع الدفع</label><select name="payment_type"><option value="lesson">حصص / شهر</option><option value="book">كتاب / مذكرة</option><option value="reservation">حجز</option><option value="other">أخرى</option></select></div><div class="field"><label>تاريخ الدفع</label><input name="payment_date" type="date" id="paymentDate" required></div><div class="field"><label>الشهر</label><input name="month_label" placeholder="أكتوبر 2026"></div><div class="field"><label>ملاحظات</label><input name="notes"></div><div class="field" style="justify-content:end"><button>حفظ الدفعة</button></div></form><p id="paymentMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>المدفوعات وملخص كل طالب</h2></div><div id="paymentSummary" class="tablewrap"></div><h3 style="margin:18px 0 8px">آخر الدفعات</h3><div id="paymentsTable" class="tablewrap"></div></div>
+      </section>
+
+      <section id="page-materials" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>إضافة مذكرة / كتاب للمخزون</h2></div><form id="materialForm" class="formgrid"><div class="field"><label>الاسم *</label><input name="title" required></div><div class="field"><label>النوع</label><select name="material_type"><option value="memo">مذكرة</option><option value="book">كتاب</option><option value="other">أخرى</option></select></div><div class="field"><label>السعر</label><input name="price" type="number" min="0" step=".01" value="0"></div><div class="field"><label>الكمية المتاحة</label><input name="stock" type="number" min="0" value="0"></div><div class="field"><label>ملاحظات</label><input name="notes"></div><div class="field" style="justify-content:end"><button>حفظ المخزون</button></div></form><p id="materialMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>بيع / حجز مذكرة أو كتاب</h2></div><form id="saleForm" class="formgrid"><div class="field"><label>المادة *</label><select name="material_id" id="saleMaterial" required></select></div><div class="field"><label>الطالب</label><select name="student_id" id="saleStudent"><option value="">بدون ربط طالب</option></select></div><div class="field"><label>الكمية</label><input name="quantity" type="number" min="1" value="1" required></div><div class="field"><label>سعر الوحدة</label><input name="unit_price" type="number" min="0" step=".01" required></div><div class="field"><label>المبلغ المدفوع</label><input name="paid_amount" type="number" min="0" step=".01" value="0"></div><div class="field"><label>الحالة</label><select name="status"><option value="sold">تم البيع</option><option value="reserved">محجوز</option><option value="cancelled">ملغي</option></select></div><div class="field"><label>التاريخ</label><input name="sale_date" type="date" id="saleDate" required></div><div class="field"><label>ملاحظات</label><input name="notes"></div><div class="field" style="justify-content:end"><button>تسجيل العملية</button></div></form><p id="saleMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>المخزون والعمليات</h2></div><div id="materialsTable" class="tablewrap"></div><div id="salesTable" class="tablewrap" style="margin-top:16px"></div></div>
+      </section>
+
+      <section id="page-cash" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>تسجيل إيراد أو مصروف</h2></div><form id="cashForm" class="formgrid"><div class="field"><label>نوع الحركة</label><select name="entry_type"><option value="income">إيراد</option><option value="expense">مصروف</option></select></div><div class="field"><label>التصنيف</label><input name="category" placeholder="إيجار، أدوات، دخل إضافي"></div><div class="field"><label>المبلغ *</label><input name="amount" type="number" min=".01" step=".01" required></div><div class="field"><label>التاريخ</label><input name="entry_date" type="date" id="cashDate" required></div><div class="field"><label>الوصف</label><input name="description"></div><div class="field" style="justify-content:end"><button>حفظ الحركة</button></div></form><p id="cashMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>حركة الخزنة</h2></div><div id="cashSummary" class="stats"></div><div id="cashTable" class="tablewrap"></div></div>
+      </section>
+
+      <section id="page-exams" class="hidden">
+        <div class="notice">هذه النسخة تجهز إدارة الامتحانات والأسئلة للمدرس. بوابة الطالب والتصحيح الآمن وإظهار النتائج والإجابات تحتاج دوال خادمية آمنة (Edge Function/RPC) قبل نشر الامتحانات للطلاب؛ لا نكشف الإجابات الصحيحة من المتصفح.</div>
+        <div class="panel"><div class="panel-head"><h2>إنشاء امتحان</h2></div><form id="examForm" class="formgrid"><div class="field"><label>عنوان الامتحان *</label><input name="title" required></div><div class="field"><label>كود الامتحان *</label><input name="exam_code" required placeholder="مثال: CHEM1026"></div><div class="field"><label>المجموعة</label><select name="group_id" id="examGroup"><option value="">كل المجموعات / بدون تحديد</option></select></div><div class="field"><label>المدة بالدقائق</label><input name="duration_minutes" type="number" min="1" value="30"></div><div class="field"><label>بداية الامتحان</label><input name="starts_at" type="datetime-local"></div><div class="field"><label>نهاية الامتحان</label><input name="ends_at" type="datetime-local"></div><div class="field"><label>موعد إظهار النتيجة</label><input name="show_results_at" type="datetime-local"></div><div class="field"><label>موعد إظهار الإجابات</label><input name="show_answers_at" type="datetime-local"></div><div class="field"><label>التعليمات</label><input name="instructions"></div><div class="field"><label>منشور للطلاب؟</label><select name="published"><option value="false">لا — مسودة</option><option value="true">نعم</option></select></div><div class="field" style="justify-content:end"><button>حفظ الامتحان</button></div></form><p id="examMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>إضافة سؤال لامتحان</h2></div><form id="questionForm" class="formgrid"><div class="field"><label>الامتحان</label><select name="exam_id" id="questionExam" required></select></div><div class="field"><label>نوع السؤال</label><select name="question_type"><option value="mcq">اختيار من متعدد</option><option value="true_false">صح / خطأ</option><option value="short">إجابة قصيرة</option></select></div><div class="field"><label>الدرجة</label><input name="points" type="number" min="0" step=".5" value="1"></div><div class="field" style="grid-column:span 2"><label>نص السؤال *</label><textarea name="question_text" required></textarea></div><div class="field"><label>الاختيارات (كل اختيار في سطر)</label><textarea name="options_text" placeholder="اختيار 1&#10;اختيار 2&#10;اختيار 3"></textarea></div><div class="field"><label>الإجابة الصحيحة (للمدرس فقط)</label><input name="correct_answer"></div><div class="field"><label>ترتيب السؤال</label><input name="sort_order" type="number" value="0"></div><div class="field" style="justify-content:end"><button>حفظ السؤال</button></div></form><p id="questionMsg" class="msg"></p></div>
+        <div class="panel"><div class="panel-head"><h2>الامتحانات</h2></div><div id="examsTable" class="tablewrap"></div><h3 style="margin:18px 0 8px">الأسئلة</h3><div id="questionsTable" class="tablewrap"></div><h3 style="margin:18px 0 8px">محاولات ونتائج الطلاب</h3><div id="attemptsTable" class="tablewrap"></div></div>
+      </section>
+
+      <section id="page-scanner" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>سكان QR من كاميرا الهاتف</h2><span class="muted small">يحتاج HTTPS وإذن الكاميرا</span></div><div class="actions"><button onclick="startScanner()">تشغيل الكاميرا</button><button class="secondary" onclick="stopScanner()">إيقاف</button></div><div id="qr-reader" style="max-width:520px;margin:18px auto"></div><p id="scannerMsg" class="msg"></p><div id="scanResult"></div></div>
+        <div class="panel"><h3>بديل لو الكاميرا لا تعمل</h3><div class="field"><label>أدخل كود الطالب أو امسح الكود بكاميرا الجهاز</label><input id="manualCode" placeholder="كود الطالب"><button onclick="lookupStudentCode()">بحث عن الطالب</button></div></div>
+      </section>
+
+      <section id="page-settings" class="hidden">
+        <div class="panel"><div class="panel-head"><h2>إعدادات الربط</h2></div><p class="muted">ضع Project URL وPublishable key من مشروع Supabase الجديد هنا داخل الملف قبل النشر. لا تستخدم service_role أو أي Secret key في صفحة ويب.</p><div class="field"><label>Project URL</label><input id="projectUrl" placeholder="https://YOUR_PROJECT.supabase.co"></div><div class="field"><label>Publishable key (sb_publishable_...)</label><input id="publicKey" placeholder="sb_publishable_..."></div><button onclick="saveConfig()">حفظ إعدادات الربط على هذا المتصفح</button><p id="settingsMsg" class="msg"></p><div class="notice">تنبيه: إعدادات الربط المحلية تخص هذا المتصفح فقط. وللنشر على GitHub Pages، الأفضل وضع القيم داخل قسم CONFIG في الملف قبل رفعه، حتى تعمل على الموبايل أيضًا.</div></div>
+        <div class="panel"><h3>نسخة البيانات</h3><p class="muted">يمكن تصدير قائمة الطلاب إلى CSV من صفحة الطلاب. احتفظ بنسخة احتياطية دورية من بياناتك من Supabase.</p><button class="secondary" onclick="exportStudents()">تصدير الطلاب CSV</button></div>
+      </section>
+    </main>
+  </div>
+  <footer class="foot">MR SHADY SAAD Pro · لوحة إدارة تعليمية · بياناتك محمية بسياسات Supabase RLS</footer>
+</div>
+<script>
+/* CONFIG: insert your NEW project's URL and Publishable key before publishing.
+   Never put a service_role/secret key in this browser file. */
+const CONFIG = { SUPABASE_URL: "https://srswfyszmlglcwpokebn.supabase.co", SUPABASE_PUBLISHABLE_KEY: "sb_publishable_bwY5J_Zkx5-lOAJ7swmcaQ_wghanlC1" };
+let sb = null, user = null, authMode = "login", scanner = null;
+let cache = {groups:[],students:[],attendance:[],payments:[],materials:[],sales:[],cash:[],exams:[],questions:[],attempts:[]};
+const $ = id => document.getElementById(id);
+const today = () => new Date().toLocaleDateString('en-CA');
+const money = n => (Number(n)||0).toLocaleString('en-EG',{maximumFractionDigits:2}) + ' ج.م';
+const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dateAr = d => d ? new Date(d+'T00:00:00').toLocaleDateString('ar-EG') : '—';
+function initClient(){
+  const url=localStorage.getItem('mss_url') || CONFIG.SUPABASE_URL;
+  const key=localStorage.getItem('mss_key') || CONFIG.SUPABASE_PUBLISHABLE_KEY;
+  if(!url.startsWith('https://') || key.includes('PASTE_') || !key){$('authMsg').textContent='قبل الدخول: افتح الملف وعدّل CONFIG برابط ومفتاح Supabase الجديد، أو أدخلهما من الإعدادات بعد فتح الموقع.';return false}
+  sb = window.supabase.createClient(url,key); return true;
+}
+function toggleAuthMode(){authMode=authMode==='login'?'signup':'login';$('authTitle').textContent=authMode==='login'?'تسجيل الدخول':'إنشاء حساب مدرس';$('authSubmit').textContent=authMode==='login'?'دخول':'إنشاء الحساب';$('toggleAuth').textContent=authMode==='login'?'إنشاء حساب جديد':'عندي حساب بالفعل';$('nameField').classList.toggle('hidden',authMode==='login');$('authMsg').textContent=''}
+async function authSubmit(){
+  if(!sb && !initClient()) return;
+  const email=$('authEmail').value.trim(),password=$('authPassword').value,full_name=$('authName').value.trim()||'MR SHADY SAAD';
+  if(!email||!password){$('authMsg').textContent='اكتب البريد الإلكتروني وكلمة المرور.';return}
+  $('authMsg').textContent='جارٍ التنفيذ...';
+  let res;
+  if(authMode==='signup') res=await sb.auth.signUp({email,password,options:{data:{full_name}}});
+  else res=await sb.auth.signInWithPassword({email,password});
+  if(res.error){$('authMsg').textContent=res.error.message;return}
+  if(authMode==='signup' && !res.data.session){$('authMsg').textContent='تم إنشاء الحساب. راجع بريدك لتأكيد الحساب، ثم سجّل الدخول.';return}
+  user=res.data.user; await enterApp();
+}
+async function signOut(){if(sb) await sb.auth.signOut();user=null;$('appView').classList.add('hidden');$('authView').classList.remove('hidden')}
+async function enterApp(){
+  if(!user)return;$('authView').classList.add('hidden');$('appView').classList.remove('hidden');$('whoami').textContent=user.email||'مدرس';$('attendanceDate').value=today();$('paymentDate').value=today();$('saleDate').value=today();$('cashDate').value=today();await refreshAll()
+}
+function showPage(page){document.querySelectorAll('[id^="page-"]').forEach(e=>e.classList.add('hidden'));$('page-'+page).classList.remove('hidden');document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='scanner')$('scannerMsg').textContent='اضغط تشغيل الكاميرا لبدء المسح.'}
+async function getRows(table,order='created_at',ascending=false){
+  const r=await sb.from(table).select('*').order(order,{ascending}).limit(1500);
+  if(r.error)throw r.error;return r.data||[];
+}
+async function refreshAll(){
+  if(!sb && !initClient())return;
+  const {data,error}=await sb.auth.getUser();if(error||!data.user){$('authView').classList.remove('hidden');$('appView').classList.add('hidden');return}user=data.user;
+  try{
+    const results=await Promise.all([
+      getRows('groups'),getRows('students'),getRows('attendance','session_date',false),getRows('payments','payment_date',false),
+      getRows('materials'),getRows('material_sales','sale_date',false),getRows('cash_entries','entry_date',false),getRows('exams'),
+      getRows('exam_questions','sort_order',true),getRows('exam_attempts','started_at',false)
+    ]);
+    [cache.groups,cache.students,cache.attendance,cache.payments,cache.materials,cache.sales,cache.cash,cache.exams,cache.questions,cache.attempts]=results;
+    populateSelects();renderDashboard();renderStudents();renderGroups();renderAttendance();renderPayments();renderMaterials();renderCash();renderExams();renderQuestions();renderAttempts();
+  }catch(e){alert('تعذر تحميل البيانات: '+(e.message||e))}
+}
+function populateSelects(){
+  const opts=(items,labelFn,blank=true)=>`${blank?'<option value="">— اختر —</option>':''}`+items.map(x=>`<option value="${x.id}">${esc(labelFn(x))}</option>`).join('');
+  $('studentGroup').innerHTML='<option value="">بدون مجموعة</option>'+opts(cache.groups,g=>g.name,false);
+  $('attendanceStudent').innerHTML=opts(cache.students,s=>s.full_name+' · '+s.student_code);
+  $('paymentStudent').innerHTML=opts(cache.students,s=>s.full_name+' · '+s.student_code);
+  $('saleStudent').innerHTML='<option value="">بدون ربط طالب</option>'+opts(cache.students,s=>s.full_name,false);
+  $('attendanceGroup').innerHTML='<option value="">حسب مجموعة الطالب</option>'+opts(cache.groups,g=>g.name,false);
+  $('examGroup').innerHTML='<option value="">بدون تحديد مجموعة</option>'+opts(cache.groups,g=>g.name,false);
+  $('saleMaterial').innerHTML=opts(cache.materials,m=>m.title+' (المتاح '+(m.stock-m.reserved)+')');
+  $('questionExam').innerHTML=opts(cache.exams,e=>e.title+' · '+e.exam_code);
+}
+function groupName(id){return cache.groups.find(g=>g.id===id)?.name||'بدون مجموعة'}
+function studentName(id){return cache.students.find(s=>s.id===id)?.full_name||'طالب محذوف'}
+function renderDashboard(){
+  $('statStudents').textContent=cache.students.filter(s=>s.active).length;
+  $('statAbsent').textContent=cache.attendance.filter(a=>a.session_date===today()&&a.status==='absent').length;
+  $('statPaid').textContent=money(cache.payments.reduce((s,p)=>s+Number(p.amount),0));
+  const inc=cache.cash.filter(x=>x.entry_type==='income').reduce((s,x)=>s+Number(x.amount),0),out=cache.cash.filter(x=>x.entry_type==='expense').reduce((s,x)=>s+Number(x.amount),0);
+  $('statNet').textContent=money(inc-out);
+  const streaks=cache.students.map(s=>({s,count:consecutiveAbsences(s.id)})).filter(x=>x.count>=2);
+  $('alerts').innerHTML=`<p>طلاب غيابهم متتالي حصتين أو أكثر: <b>${streaks.length}</b></p><p>عدد المذكرات والكتب المسجلة: <b>${cache.materials.length}</b></p><p>امتحانات مسجلة: <b>${cache.exams.length}</b></p><p class="muted small">تُحسب سلسلة الغياب من أحدث تواريخ الحضور المسجلة للطالب.</p>`;
+  $('groupSummary').innerHTML=table(['المجموعة','عدد الطلاب','سعر الشهر'],cache.groups.map(g=>[esc(g.name),cache.students.filter(s=>s.group_id===g.id&&s.active).length,money(g.monthly_fee)]));
+}
+function consecutiveAbsences(studentId){
+  const rows=cache.attendance.filter(a=>a.student_id===studentId).sort((a,b)=>b.session_date.localeCompare(a.session_date));
+  let n=0;for(const a of rows){if(a.status==='absent')n++;else if(a.status==='present'||a.status==='late'||a.status==='excused')break}return n;
+}
+function balanceFor(studentId){
+  const studentPays=cache.payments.filter(p=>p.student_id===studentId).reduce((s,p)=>s+Number(p.amount),0);
+  const student=cache.students.find(s=>s.id===studentId);const fee=Number(cache.groups.find(g=>g.id===student?.group_id)?.monthly_fee||0);
+  return {paid:studentPays,fee,owed:Math.max(0,fee-studentPays)};
+}
+function table(headers,rows){if(!rows.length)return '<div class="empty">لا توجد بيانات حتى الآن</div>';return '<table><thead><tr>'+headers.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')+'</tbody></table>'}
+function renderStudents(){
+ const q=($('studentSearch')?.value||'').toLowerCase();
+ const rows=cache.students.filter(s=>(s.full_name+' '+s.student_code+' '+(s.phone||'')).toLowerCase().includes(q)).map(s=>[
+ esc(s.full_name),esc(s.student_code),esc(groupName(s.group_id)),esc(s.phone||'—'),esc(s.guardian_phone||'—'),
+ `<span class="tag ${consecutiveAbsences(s.id)>=2?'red':''}">${consecutiveAbsences(s.id)} متتالية</span>`,
+ money(balanceFor(s.id).owed),`<div class="actions"><button class="secondary" onclick="showStudent('${s.id}')">التفاصيل / QR</button><button class="secondary" onclick="quickAttendance('${s.id}','present')">حاضر</button><button class="red" onclick="quickAttendance('${s.id}','absent')">غائب</button></div>`
+ ]);
+ $('studentsTable').innerHTML=table(['اسم الطالب','الكود','المجموعة','رقم الطالب','رقم ولي الأمر','الغياب المتتالي','مستحق مبدئي*','إجراءات'],rows);
+}
+function showStudent(id){
+ const s=cache.students.find(x=>x.id===id);if(!s)return;
+ const at=cache.attendance.filter(a=>a.student_id===id),present=at.filter(a=>a.status==='present'||a.status==='late').length,abs=at.filter(a=>a.status==='absent').length;
+ const paid=cache.payments.filter(p=>p.student_id===id).reduce((x,p)=>x+Number(p.amount),0);
+ const detail=$('studentDetail');detail.classList.remove('hidden');
+ detail.innerHTML=`<div class="panel-head"><h2>ملف الطالب: ${esc(s.full_name)}</h2><button class="secondary" onclick="detail.classList.add('hidden')">إغلاق</button></div><div class="grid2"><div class="student-card"><p><b>الكود:</b> ${esc(s.student_code)}</p><p><b>المجموعة:</b> ${esc(groupName(s.group_id))}</p><p><b>الهاتف:</b> ${esc(s.phone||'—')}</p><p><b>ولي الأمر:</b> ${esc(s.guardian_name||'—')} · ${esc(s.guardian_phone||'—')}</p><p><b>حضور:</b> ${present} · <b>غياب:</b> ${abs} · <b>غياب متتالي:</b> ${consecutiveAbsences(id)}</p><p><b>إجمالي المدفوع:</b> ${money(paid)}</p><p><b>المتبقي التقديري للشهر الحالي:</b> ${money(balanceFor(id).owed)}</p><p class="muted small">*المتبقي تقديري بناءً على سعر المجموعة ناقص كل مدفوعات الطالب؛ راجع الشهر المسجل عند استخدام أكثر من شهر.</p></div><div class="student-card"><p><b>QR الخاص بالطالب</b></p><div id="studentQr" class="qrbox"></div><p class="small muted">اطبع الكود أو احتفظ بصورة منه. الكود يحتوي معرف الطالب ورمزه.</p><button onclick="window.print()" class="secondary">طباعة / حفظ PDF</button></div></div><h3 style="margin:18px 0 8px">سجل الحضور</h3>${table(['التاريخ','الحالة','ملاحظات'],at.sort((a,b)=>b.session_date.localeCompare(a.session_date)).map(a=>[dateAr(a.session_date),statusAr(a.status),esc(a.notes||'—')]))}<h3 style="margin:18px 0 8px">سجل المدفوعات</h3>${table(['التاريخ','النوع','المبلغ','الشهر','ملاحظات'],cache.payments.filter(p=>p.student_id===id).map(p=>[dateAr(p.payment_date),typePayAr(p.payment_type),money(p.amount),esc(p.month_label||'—'),esc(p.notes||'—')]))}`;
+ new QRCode($('studentQr'),{text:'MSSSTUDENT:'+s.id+':'+s.student_code,width:150,height:150});
+ detail.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function statusAr(s){return ({present:'حاضر',absent:'غائب',late:'متأخر',excused:'بعذر'})[s]||s}
+function typePayAr(s){return ({lesson:'حصص / شهر',book:'كتاب / مذكرة',reservation:'حجز',other:'أخرى'})[s]||s}
+async function addRow(tableName,values,msgId){
+ const payload={...values,teacher_id:user.id};const r=await sb.from(tableName).insert(payload);
+ if(r.error){$(msgId).textContent='لم يتم الحفظ: '+r.error.message;return false}
+ $(msgId).textContent='تم الحفظ بنجاح.';await refreshAll();return true;
+}
+$('studentForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.student_code=f.student_code.trim()||('ST-'+Date.now().toString().slice(-8));f.group_id=f.group_id||null;f.active=true;const ok=await addRow('students',f,'studentMsg');if(ok)e.target.reset()});
+$('groupForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.monthly_fee=Number(f.monthly_fee||0);const ok=await addRow('groups',f,'groupMsg');if(ok)e.target.reset()});
+$('attendanceForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));const st=cache.students.find(s=>s.id===f.student_id);f.group_id=f.group_id||st?.group_id||null;const r=await sb.from('attendance').upsert({...f,teacher_id:user.id},{onConflict:'teacher_id,student_id,group_id,session_date'});if(r.error){$('attendanceMsg').textContent='لم يتم التسجيل: '+r.error.message;return}$('attendanceMsg').textContent='تم تسجيل الحضور.';await refreshAll()});
+async function quickAttendance(id,status){const s=cache.students.find(x=>x.id===id);if(!s)return;const r=await sb.from('attendance').upsert({teacher_id:user.id,student_id:id,group_id:s.group_id||null,session_date:today(),status},{onConflict:'teacher_id,student_id,group_id,session_date'});if(r.error){alert(r.error.message);return}await refreshAll();alert('تم تسجيل '+statusAr(status)+' للطالب '+s.full_name)}
+$('paymentForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.amount=Number(f.amount);f.student_id=f.student_id;const ok=await addRow('payments',f,'paymentMsg');if(ok)e.target.reset()});
+$('materialForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.price=Number(f.price||0);f.stock=Number(f.stock||0);const ok=await addRow('materials',f,'materialMsg');if(ok)e.target.reset()});
+$('saleForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.quantity=Number(f.quantity);f.unit_price=Number(f.unit_price);f.paid_amount=Number(f.paid_amount||0);f.student_id=f.student_id||null;
+ const mat=cache.materials.find(m=>m.id===f.material_id);if(!mat){$('saleMsg').textContent='اختر مادة صحيحة.';return}if(f.status!=='cancelled'&&f.quantity>Number(mat.stock-mat.reserved)){ $('saleMsg').textContent='الكمية أكبر من المتاح في المخزون.';return}
+ const r=await sb.from('material_sales').insert({...f,teacher_id:user.id});if(r.error){$('saleMsg').textContent='لم يتم الحفظ: '+r.error.message;return}
+ if(f.status==='reserved'){await sb.from('materials').update({reserved:Number(mat.reserved)+f.quantity}).eq('id',mat.id)}
+ if(f.status==='sold'){await sb.from('materials').update({stock:Number(mat.stock)-f.quantity}).eq('id',mat.id)}
+ if(f.paid_amount>0&&f.student_id){await sb.from('payments').insert({teacher_id:user.id,student_id:f.student_id,amount:f.paid_amount,payment_date:f.sale_date,payment_type:'book',notes:'تحصيل بيع/حجز '+mat.title})}
+ $('saleMsg').textContent='تم تسجيل العملية.';await refreshAll()
+});
+$('cashForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.amount=Number(f.amount);const ok=await addRow('cash_entries',f,'cashMsg');if(ok)e.target.reset()});
+$('examForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.group_id=f.group_id||null;f.duration_minutes=Number(f.duration_minutes||30);f.published=f.published==='true';for(const k of ['starts_at','ends_at','show_results_at','show_answers_at'])f[k]=f[k]?new Date(f[k]).toISOString():null;const ok=await addRow('exams',f,'examMsg');if(ok)e.target.reset()});
+$('questionForm').addEventListener('submit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));f.points=Number(f.points||1);f.sort_order=Number(f.sort_order||0);f.options=f.options_text.trim()?f.options_text.split('\n').map(x=>x.trim()).filter(Boolean):[];delete f.options_text;const ok=await addRow('exam_questions',f,'questionMsg');if(ok)e.target.reset()});
+function renderGroups(){$('groupsTable').innerHTML=table(['المجموعة','المادة','المواعيد','عدد الطلاب','سعر الشهر'],cache.groups.map(g=>[esc(g.name),esc(g.subject||'—'),esc(g.schedule||'—'),cache.students.filter(s=>s.group_id===g.id&&s.active).length,money(g.monthly_fee)]))}
+function renderAttendance(){const d=$('attendanceFilterDate')?.value;let rows=cache.attendance.filter(a=>!d||a.session_date===d).map(a=>[esc(studentName(a.student_id)),esc(groupName(a.group_id)),dateAr(a.session_date),statusAr(a.status),esc(a.notes||'—')]);$('attendanceTable').innerHTML=table(['الطالب','المجموعة','التاريخ','الحالة','ملاحظات'],rows)}
+function renderPayments(){
+ $('paymentSummary').innerHTML=table(['الطالب','المجموعة','إجمالي المدفوع','سعر الشهر','المتبقي التقديري','الغياب المتتالي'],cache.students.map(s=>{const b=balanceFor(s.id);return [esc(s.full_name),esc(groupName(s.group_id)),money(b.paid),money(b.fee),money(b.owed),consecutiveAbsences(s.id)]}));
+ $('paymentsTable').innerHTML=table(['الطالب','التاريخ','النوع','المبلغ','الشهر','ملاحظات'],cache.payments.map(p=>[esc(studentName(p.student_id)),dateAr(p.payment_date),typePayAr(p.payment_type),money(p.amount),esc(p.month_label||'—'),esc(p.notes||'—')]));
+}
+function renderMaterials(){
+ $('materialsTable').innerHTML=table(['المادة','النوع','السعر','المخزون','محجوز','المتاح','ملاحظات'],cache.materials.map(m=>[esc(m.title),esc(m.material_type),money(m.price),m.stock,m.reserved,Number(m.stock)-Number(m.reserved),esc(m.notes||'—')]));
+ $('salesTable').innerHTML='<h3 style="margin:0 0 8px">سجل بيع وحجز الكتب</h3>'+table(['المادة','الطالب','الكمية','الإجمالي','المدفوع','المتبقي','الحالة','التاريخ'],cache.sales.map(s=>[esc(cache.materials.find(m=>m.id===s.material_id)?.title||'مادة'),esc(studentName(s.student_id)),s.quantity,money(s.quantity*s.unit_price),money(s.paid_amount),money(s.quantity*s.unit_price-s.paid_amount),s.status==='reserved'?'محجوز':s.status==='cancelled'?'ملغي':'تم البيع',dateAr(s.sale_date)]));
+}
+function renderCash(){const inc=cache.cash.filter(x=>x.entry_type==='income').reduce((s,x)=>s+Number(x.amount),0),out=cache.cash.filter(x=>x.entry_type==='expense').reduce((s,x)=>s+Number(x.amount),0);$('cashSummary').innerHTML=`<div class="stat"><div class="label">الإيرادات</div><div class="value">${money(inc)}</div></div><div class="stat"><div class="label">المصروفات</div><div class="value">${money(out)}</div></div><div class="stat"><div class="label">الصافي</div><div class="value">${money(inc-out)}</div></div>`;$('cashTable').innerHTML=table(['النوع','التصنيف','المبلغ','التاريخ','الوصف'],cache.cash.map(x=>[x.entry_type==='income'?'إيراد':'مصروف',esc(x.category),money(x.amount),dateAr(x.entry_date),esc(x.description||'—')]))}
+function renderExams(){$('examsTable').innerHTML=table(['الامتحان','الكود','المجموعة','المدة','إظهار النتيجة','إظهار الإجابات','الحالة'],cache.exams.map(e=>[esc(e.title),esc(e.exam_code),esc(groupName(e.group_id)),e.duration_minutes+' دقيقة',e.show_results_at?new Date(e.show_results_at).toLocaleString('ar-EG'):'غير محدد',e.show_answers_at?new Date(e.show_answers_at).toLocaleString('ar-EG'):'غير محدد',e.published?'منشور':'مسودة']));}
+function renderQuestions(){$('questionsTable').innerHTML=table(['الامتحان','السؤال','النوع','الدرجة','الإجابة الصحيحة (للمدرس)'],cache.questions.map(q=>[esc(cache.exams.find(e=>e.id===q.exam_id)?.title||'—'),esc(q.question_text),esc(q.question_type),q.points,esc(q.correct_answer||'—')]))}
+function renderAttempts(){$('attemptsTable').innerHTML=table(['الامتحان','الطالب','بدأ','سلّم','الدرجة','الحالة'],cache.attempts.map(a=>[esc(cache.exams.find(e=>e.id===a.exam_id)?.title||'—'),esc(studentName(a.student_id)),new Date(a.started_at).toLocaleString('ar-EG'),a.submitted_at?new Date(a.submitted_at).toLocaleString('ar-EG'):'—',a.score===null?'لم تصحح':esc(a.score)+' / '+esc(a.max_score),esc(a.status)]))}
+function lookupStudentCode(){const code=$('manualCode').value.trim();let id=code;if(code.startsWith('MSSSTUDENT:'))id=code.split(':')[1];const s=cache.students.find(x=>x.id===id||x.student_code.toLowerCase()===id.toLowerCase());if(!s){$('scannerMsg').textContent='لم يتم العثور على الطالب بهذا الكود.';return}showStudent(s.id);$('scannerMsg').textContent='تم العثور على الطالب: '+s.full_name;showPage('students')}
+async function startScanner(){if(!window.Html5Qrcode){$('scannerMsg').textContent='مكتبة QR لم تُحمّل. تحقق من الإنترنت.';return}try{if(scanner){await stopScanner()}scanner=new Html5Qrcode('qr-reader');await scanner.start({facingMode:'environment'},{fps:10,qrbox:{width:240,height:240}},async decoded=>{await stopScanner();$('manualCode').value=decoded;lookupStudentCode();$('scannerMsg').textContent='تمت قراءة الكود.'},()=>{});$('scannerMsg').textContent='وجّه الكاميرا إلى QR الطالب.'}catch(e){$('scannerMsg').textContent='تعذر تشغيل الكاميرا: '+e+'. تأكد من HTTPS وإذن الكاميرا.'}}
+async function stopScanner(){if(scanner){try{if(scanner.isScanning)await scanner.stop();await scanner.clear()}catch(e){}scanner=null}}
+function exportStudents(){const rows=[['الاسم','الكود','المجموعة','الهاتف','ولي الأمر','هاتف ولي الأمر','حضور','غياب','غياب متتالي','إجمالي المدفوع']];cache.students.forEach(s=>{const a=cache.attendance.filter(x=>x.student_id===s.id);rows.push([s.full_name,s.student_code,groupName(s.group_id),s.phone||'',s.guardian_name||'',s.guardian_phone||'',a.filter(x=>['present','late'].includes(x.status)).length,a.filter(x=>x.status==='absent').length,consecutiveAbsences(s.id),cache.payments.filter(p=>p.student_id===s.id).reduce((n,p)=>n+Number(p.amount),0)])});const csv='\ufeff'+rows.map(r=>r.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='MR_SHADY_SAAD_students.csv';a.click();URL.revokeObjectURL(a.href)}
+function saveConfig(){const url=$('projectUrl').value.trim(),key=$('publicKey').value.trim();if(!url.startsWith('https://')||!key.startsWith('sb_publishable_')){$('settingsMsg').textContent='تأكد من Project URL ومن أن المفتاح يبدأ بـ sb_publishable_.';return}localStorage.setItem('mss_url',url);localStorage.setItem('mss_key',key);$('settingsMsg').textContent='تم الحفظ على هذا المتصفح. أعد تحميل الصفحة لتفعيل الاتصال.'}
+(async function boot(){if(!initClient())return;const {data}=await sb.auth.getSession();if(data.session){user=data.session.user;await enterApp()}sb.auth.onAuthStateChange((_event,session)=>{if(session){user=session.user;enterApp()}else if(user){user=null;$('appView').classList.add('hidden');$('authView').classList.remove('hidden')}})})();
+</script>
+</body></html>
