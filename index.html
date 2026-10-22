@@ -302,7 +302,7 @@ async function checkStudentExamStatus(){
  if(!f.exam_code||!f.student_code||!f.phone){portalMsg('اكتب كود الامتحان وكود الطالب ورقم الهاتف أولًا.');return}
  portalMsg('جارٍ الاستعلام...');
  const {data,error}=await sb.rpc('student_exam_status',{p_exam_code:f.exam_code.trim(),p_student_code:f.student_code.trim(),p_phone:f.phone.trim()});
- if(error){portalMsg('تعذر الاستعلام: '+error.message);return}
+ if(error){const missing=/student_exam_status|PGRST202|Could not find the function/i.test(error.message||'');portalMsg(missing?'بوابة الامتحانات غير مفعّلة على قاعدة البيانات بعد. شغّل ملف exam_portal_patch.sql مرة واحدة في Supabase SQL Editor ثم أعد المحاولة.':('تعذر الاستعلام: '+error.message));return}
  const r=Array.isArray(data)?data[0]:data;
  if(!r||r.error){portalMsg(r?.error||'لا توجد نتيجة متاحة.');return}
  $('studentExamArea').classList.remove('hidden');
@@ -313,7 +313,7 @@ $('studentExamLogin').addEventListener('submit',async e=>{
  e.preventDefault(); if(!sb&&!initClient())return;
  const f=Object.fromEntries(new FormData(e.target));portalMsg('جارٍ التحقق من البيانات...');
  const {data,error}=await sb.rpc('student_exam_start',{p_exam_code:f.exam_code.trim(),p_student_code:f.student_code.trim(),p_phone:f.phone.trim()});
- if(error){portalMsg('تعذر الدخول: '+error.message);return}
+ if(error){const missing=/student_exam_start|PGRST202|Could not find the function/i.test(error.message||'');portalMsg(missing?'سبب المشكلة: دالة دخول الطلاب غير موجودة في Supabase. شغّل ملف exam_portal_patch.sql مرة واحدة في SQL Editor، ثم جرّب مجددًا.':('تعذر الدخول: '+error.message));return}
  const result=Array.isArray(data)?data[0]:data;
  if(!result||result.error){portalMsg(result?.error||'البيانات غير صحيحة أو الامتحان غير متاح.');return}
  studentExamContext={exam_code:f.exam_code.trim(),student_code:f.student_code.trim(),phone:f.phone.trim(),attempt_id:result.attempt_id,expires_at:result.expires_at};
@@ -338,7 +338,7 @@ async function submitStudentExam(auto){
  const btn=form.querySelector('button');if(btn)btn.disabled=true;
  $('submitExamMsg').textContent=auto?'انتهى الوقت، جارٍ التسليم...':'جارٍ تسليم الإجابات...';
  const {data,error}=await sb.rpc('student_exam_submit',{p_attempt_id:studentExamContext.attempt_id,p_exam_code:studentExamContext.exam_code,p_student_code:studentExamContext.student_code,p_phone:studentExamContext.phone,p_answers:answers});
- if(error){studentExamSubmitting=false;$('submitExamMsg').textContent='حصل خطأ أثناء التسليم: '+error.message;return}
+ if(error){studentExamSubmitting=false;form.querySelectorAll('input').forEach(el=>el.disabled=false);if(btn)btn.disabled=false;$('submitExamMsg').textContent=/student_exam_submit|PGRST202|Could not find the function/i.test(error.message||'')?'دالة تسليم الامتحان غير موجودة في Supabase. شغّل ملف exam_portal_patch.sql مرة واحدة، ثم حاول التسليم مجددًا.':'حصل خطأ أثناء التسليم: '+error.message;return}
  const r=Array.isArray(data)?data[0]:data;
  $('studentExamArea').innerHTML=`<div class="panel" style="padding:22px"><h2>تم تسليم الامتحان بنجاح</h2><p>${esc(r?.message||'تم حفظ إجاباتك.')}</p>${r?.result_visible?`<h3>درجتك: ${esc(r.score)} / ${esc(r.max_score)}</h3>`:'سيتم إظهار النتيجة في الموعد الذي حدده المدرس.'}${r?.answers_visible&&r?.review?`<h3>مراجعة الإجابات</h3>${r.review.map(x=>`<p>${esc(x.question_text)}<br>إجابتك: ${esc(x.your_answer||'—')} · الصحيحة: ${esc(x.correct_answer||'—')}</p>`).join('')}`:''}</div>`;
 }
